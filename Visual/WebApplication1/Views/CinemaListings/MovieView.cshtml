@@ -1,0 +1,29 @@
+﻿@using MovieServicesQueries.DTO;
+@model MovieDTO
+@{
+    ViewBag.Title = "Movie";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br><br><br><br>
+            <div class="jumbotron">
+                <h2>@Model.Name_P</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src="https://images.moviesanywhere.com/5948f139cd669fb5984d2c782e7678be/99cedd1f-ae78-4026-a3e8-b79840b71cbc.jpg"
+                             width="200" height="200">
+                    </div>
+                    <div class="col-lg-offset-4">
+                        <strong>Género:</strong> @Model.Genre<br>
+                        <strong>Sinopsis:</strong> @Model.Synopsis<br>
+                        <strong>Director:</strong> @Model.Director<br>
+                        <strong>Duración:</strong> @Model.Duration  minutos<br><br><br>
+
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Reservar" class="btn btn-success" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+

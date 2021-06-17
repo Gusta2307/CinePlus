@@ -1,0 +1,56 @@
+﻿@using MovieDomain;
+@model Movie
+@{
+    ViewBag.Title = "New Movie";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form class="form-horizontal">
+    <fieldset>
+            <h2>Añadir Película</h2>
+
+            @using (Html.BeginForm("Save", "Movie"))
+            {
+                @Html.ValidationSummary(true, "Please fix the following errors.")
+                <div class="form-group">
+                    <div class="col-lg-5">
+                        @Html.LabelFor(m => m.Name_P)
+                        @Html.TextBoxFor(m => m.Name_P, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Name_P)
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-5">
+                        @Html.LabelFor(m => m.Synopsis)
+                        @Html.TextAreaFor(m => m.Synopsis, new { @class = "form-control" })
+                        @*Html.DropDownListFor(m => m.DataHour_P, new SelectList(Model.MembershipTypes, "Id", "Name"), "", new { @class = "form-control" })*@
+                        @Html.ValidationMessageFor(m => m.Synopsis)
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-5">
+                        @Html.LabelFor(m => m.Genre)
+                        @Html.TextBoxFor(m => m.Genre, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Genre)
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-5">
+                        @Html.LabelFor(m => m.Director)
+                        @Html.TextBoxFor(m => m.Director, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Director)
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-5">
+                        @Html.LabelFor(m => m.Photo)
+                        @Html.TextBoxFor(m => m.Photo, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Photo)
+                    </div>
+                </div>
+                @Html.HiddenFor(m => m.ID_M)
+                @Html.AntiForgeryToken()
+                <button type="submit" class="btn btn-primary">Guardar</button>
+            }
+    </fieldset>
+</form>

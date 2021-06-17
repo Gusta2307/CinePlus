@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="9.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\ServiceCommonMapping\ServiceCommonMapping.csproj" />
+    <ProjectReference Include="..\BookingDataBase\BookingDataBase.csproj" />
+    <ProjectReference Include="..\BookingDomain\BookingDomain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="BookingServicesQueries">
+      <HintPath>..\BookingServicesQueries\bin\Debug\net5.0\ref\BookingServicesQueries.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

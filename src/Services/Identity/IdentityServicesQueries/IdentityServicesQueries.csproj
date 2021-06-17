@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\ServiceCommonCollection\ServiceCommonCollection.csproj" />
+    <ProjectReference Include="..\..\Common\ServiceCommonMapping\ServiceCommonMapping.csproj" />
+    <ProjectReference Include="..\..\Common\ServiceCommonPapping\ServiceCommonPapping.csproj" />
+    <ProjectReference Include="..\IdentityDataBase\IdentityDataBase.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="IdentityDataBase">
+      <HintPath>..\IdentityDataBase\bin\Debug\net5.0\ref\IdentityDataBase.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

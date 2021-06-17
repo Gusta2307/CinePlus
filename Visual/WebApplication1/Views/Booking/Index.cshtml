@@ -1,0 +1,19 @@
+﻿
+@model WebApplication1.Models.CinemaListings
+
+
+@{ ViewBag.Title = "New";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Nueva Reserva</h2>
+
+@using (Html.BeginForm("Reservar", "CinemaListings"))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.current_movie.Name_P)
+        @Html.DropDownListFor(m => m.current_movie.Name_P, new SelectList(Model.current_movie.Name_P, "Id", "Name"), "", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.current_movie.Name_P)
+    </div>
+
+}

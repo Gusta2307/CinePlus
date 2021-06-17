@@ -1,0 +1,45 @@
+﻿@using IdentityServicesQueries.DTO
+@model UserDTO
+
+
+@{ ViewBag.Title = "New";
+    Layout = "~/Views/Shared/_Layout.cshtml"; }
+
+<form class="form-horizontal">
+    <fieldset>
+        <h2>Añadir algo(no se como ponerle)</h2>
+
+        @using (Html.BeginForm("Save", "Employee"))@*PONER EN EL CONTROLLER*@ {
+        @Html.ValidationSummary(true, "Please fix the following errors.")
+        <div class="form-group">
+            @Html.LabelFor(m => m.Name_LastName)
+            @Html.TextBoxFor(m => m.Name_LastName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Name_LastName)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Email)
+            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Email)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Password)
+            @Html.TextBoxFor(m => m.Password, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Password)
+        </div>
+        <!--
+        <div class="form-group">
+
+            @*Html.LabelFor(m => m.ConfirmPassword)*@
+            @*Html.TextBoxFor(m => m.ConfirmPassword, new { @class = "form-control" })*@
+            @*Html.ValidationMessageFor(m => m.ConfirmPassword)*@
+        </div>
+            -->
+        <div class="form-group">
+            @Html.LabelFor(m => m.Role)
+            @Html.DropDownListFor(m => m.Role, new SelectList("Administrador", "Empleado de Mostrador"), "", new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Role)
+        </div>
+        @Html.AntiForgeryToken()
+        <button type="submit" class="btn btn-primary">Guardar</button>}
+    </fieldset>
+</form>
